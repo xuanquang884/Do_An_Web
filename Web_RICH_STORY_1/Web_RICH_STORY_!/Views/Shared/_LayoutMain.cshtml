@@ -1,0 +1,223 @@
+﻿
+@{
+    ViewBag.Title = "_LayoutMain";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Free Bootstrap Themes by 365Bootstrap dot com - Free Responsive Html5 Templates">
+    <!-- <meta name="author" content="http://www.365bootstrap.com"> -->
+
+    <title>
+        MEN
+        |
+        STORE
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/Assets/css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Assets/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css"> -->
+    <link rel="stylesheet" href="/Assets/fonts/font-slider.css" type="text/css">
+
+    <!-- jQuery and Modernizr-->
+    <script src="/Assets/js/jquery-2.1.1.js"></script>
+
+    <!-- Core JavaScript Files -->
+    <script src="/Assets/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!--Top-->
+    <nav id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                    <select class="language">
+                        <option value="English" selected>English</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                    </select>
+                    <select class="currency">
+                        <option value="USD" selected>USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="DDD">DDD</option>
+                    </select>
+                </div>
+                <div class="col-xs-6">
+                    <ul class="top-link">
+                        <li><a href="account.html"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+                        <li><a href="contact.html"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--Header-->
+    <header class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div id="logo">
+                    <a href="#"
+                       style="font-size: 40px;font-style:unset;background-color: black;color: white;padding: 0 20px;">
+                        MEN
+                        |
+                        STORE
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <form class="form-search">
+                    <input type="text" class="input-medium search-query">
+                    <button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <div id="cart">
+                    <a class="btn btn-1" href="cart.html">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>CART : 0 ITEM
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Navigation-->
+    <nav id="menu" class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <span id="heading" class="visible-xs">Categories</span>
+                <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse"
+                        data-target=".navbar-ex1-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("TRANG CHỦ", "Index", "Home")</li>
+                    <li>@Html.ActionLink("GIỚI THIỆU", "About", "Home")</li>
+                    <li class="dropdown">
+                        <a href="#">SẢN PHẨM</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-inner">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">ÁO KHOÁC</a></li>
+                                    <li><a href="#">ÁO SƠ MI</a></li>
+                                    <li><a href="#">QUẦN JEANS</a></li>
+                                    <li><a href="#">QUẦN TÂY</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">PHỤ KIỆN</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-inner">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">GIÀY THỂ THAO</a></li>
+                                    <li><a href="#">GIÀY DA</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    @RenderBody();
+    <footer>
+        <div class="container">
+            <div class="wrap-footer">
+                <div class="row">
+                    <div class="col-md-3 col-footer footer-1">
+                        <a href="#"
+                           style="font-size: 28px;font-style:unset;background-color: black;color: white;padding: 10px 20px;">
+                            MEN
+                            |
+                            STORE
+                        </a>
+                        <p style="margin-top: 10px;">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                            industry.Lorem Ipsum is
+                            simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-footer footer-2">
+                        <div class="heading">
+                            <h4>Customer Service</h4>
+                        </div>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Delivery Information</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-footer footer-3">
+                        <div class="heading">
+                            <h4>My Account</h4>
+                        </div>
+                        <ul>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Brands</a></li>
+                            <li><a href="#">Gift Vouchers</a></li>
+                            <li><a href="#">Specials</a></li>
+                            <li><a href="#">Site Map</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-footer footer-4">
+                        <div class="heading">
+                            <h4>Contact Us</h4>
+                        </div>
+                        <ul>
+                            <li>
+                                <span class="glyphicon glyphicon-home"></span>475 Điện Biên Phủ, Q.Bình Thanh ,TP.HCM
+                            </li>
+                            <li><span class="glyphicon glyphicon-earphone"></span>0325632749, 0945322146</li>
+                            <li><span class="glyphicon glyphicon-envelope"></span>dinhxuanquang1234@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        Xuân Quang © 20xx - <a href="http://wwww.facebook.com" rel="nofollow"
+                                               target="_blank">facebook</a>
+                        18DTHC3 <a href="http://www.gmail.com" rel="nofollow" target="_blank">gmail</a>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="pull-right">
+                            <ul>
+                                <li><img src="/Assets/images/visa-curved-32px.png" /></li>
+                                <li><img src="/Assets/images/paypal-curved-32px.png" /></li>
+                                <li><img src="/Assets/images/discover-curved-32px.png" /></li>
+                                <li><img src="/Assets/images/maestro-curved-32px.png" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
