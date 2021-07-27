@@ -1,0 +1,123 @@
+﻿@model Web_CuoiKy.Models.San_Pham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
+}
+<style>
+    .main{
+        width:960px;
+        margin:auto;
+    }
+    .dl-horizontal img {
+        height: 100px;
+    }
+</style>
+<div class="main">
+    <h2>Chi tiết sản phẩm</h2>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MALOAISP)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MALOAISP)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TENSP)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TENSP)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MOTA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MOTA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GIA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GIA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SOLUONG)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SOLUONG)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TINHTRANG)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TINHTRANG)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LUOTVIEW)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LUOTVIEW)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HINH)
+            </dt>
+
+            <dd>
+                <img src="@Url.Content("~/Images/"+Model.HINH)" />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HINH1)
+            </dt>
+
+            <dd>
+                <img src="@Url.Content("~/Images/"+Model.HINH1)" "  />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HINH2)
+            </dt>
+
+            <dd>
+                <img src="@Url.Content("~/Images/"+Model.HINH2)" />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HINH3)
+            </dt>
+
+            <dd>
+                <img src="@Url.Content("~/Images/"+Model.HINH3)" />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HINH4)
+            </dt>
+
+            <dd>
+                <img src="@Url.Content("~/Images/"+Model.HINH4)" />
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

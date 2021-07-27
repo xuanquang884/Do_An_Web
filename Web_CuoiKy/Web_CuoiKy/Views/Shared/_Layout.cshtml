@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Assets/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("VIỆT NAM", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                @*<ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>*@
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <hr />
+    </div>
+    @*BoDy secsion*@
+
+    <header class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div id="logo">
+                    <a href="#"
+                       style="font-size: 40px;font-style:unset;background-color: black;color: white;padding: 0 20px;">
+                        RICH | STORY
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+               
+            </div>
+            <div class="col-md-4">
+                <div id="cart">
+                    <a class="btn btn-1" href="@Url.Action("ShowToCart","ShoppingCart")">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>CART :  @Html.Action("BagCart", "ShoppingCart") SP
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Navigation-->
+    <nav id="menu" class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <span id="heading" class="visible-xs">Categories</span>
+                <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse"
+                        data-target=".navbar-ex1-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("TRANG CHỦ", "Index", "Home")</li>
+                    <li>@Html.ActionLink("GIỚI THIỆU", "About", "Home")</li>
+                    <li class="dropdown">
+                        @Html.ActionLink("SẢN PHẨM", "SanPham", "SanPham")
+                        <div class="dropdown-menu">
+                            <div class="dropdown-inner">
+                                <ul class="list-unstyled">
+                                    <li> @Html.ActionLink("ÁO KHOÁC", "Ao_Khoac", "SanPham")</li>
+                                    <li> @Html.ActionLink("ÁO SƠ MI", "Ao_SoMi", "SanPham")</li>
+                                    <li> @Html.ActionLink("QUẦN JEANS", "Quan_Jeans", "SanPham")</li>
+                                    <li> @Html.ActionLink("QUẦN TẤY", "Quan_Tay", "SanPham")</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        @Html.ActionLink("PHỤ KIỆN", "Phu_Kien", "SanPham")
+                    </li>
+                    <li>@Html.ActionLink("LIÊN HỆ", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    @*BoDy secsion*@
+    @RenderBody();
+
+    <footer>
+        <div class="container">
+            <div class="wrap-footer">
+                <div class="row">
+                    <div class="col-md-3 col-footer footer-1">
+                        <a href="#"
+                           style="font-size: 28px;font-style:unset;background-color: black;color: white;padding: 10px 20px;">
+                            RICH | STORY
+                        </a>
+                        <p style="margin-top: 10px;">
+                            Cảm ơn quý khách đã ghé thăm và mua sắm ở Website cửa chúng tôi.
+                            Hẹn gặp lại quý khách vào lần sau
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-footer footer-2">
+                        <div class="heading" style="text-align:center;">
+                            <h4>Dịch Vụ</h4>
+                        </div>
+                        <ul>
+                            <li>Gửi xe miễn phí khi mua tại cửa hàng</li>
+                            <li>Dịch vụ chắm sóc khách hàng 5*</li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-footer footer-3">
+                        <div class="heading" style="text-align:center;">
+                            <h4>Ưu Đãi</h4>
+                        </div>
+                        <ul>
+                            <li>Nhiều ưu đại vào dịp lễ</li>
+                            <li>Flash sale vào cuối tuần </li>
+                            <li>Nhiều hoạt động hấp dẫn</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-footer footer-4">
+                        <div class="heading" style="text-align:center;">
+                            <h4>Liên Hệ</h4>
+                        </div>
+                        <ul>
+                            <li>
+                                <span class="glyphicon glyphicon-home"></span>475 Điện Biên Phủ, Q.Bình Thanh ,TP.HCM
+                            </li>
+                            <li><span class="glyphicon glyphicon-earphone"></span>0325632749, 0945322146</li>
+                            <li><span class="glyphicon glyphicon-envelope"></span>xuanquang1234@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        Xuân Quang © 20xx - <a href="http://wwww.facebook.com" rel="nofollow"
+                                               target="_blank">facebook</a>
+                        18DTHC3 <a href="http://www.gmail.com" rel="nofollow" target="_blank">gmail</a>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="pull-right">
+                            <ul>
+                                <li><img src="/Assets/images/visa-curved-32px.png" /></li>
+                                <li><img src="/Assets/images/paypal-curved-32px.png" /></li>
+                                <li><img src="/Assets/images/discover-curved-32px.png" /></li>
+                                <li><img src="/Assets/images/maestro-curved-32px.png" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

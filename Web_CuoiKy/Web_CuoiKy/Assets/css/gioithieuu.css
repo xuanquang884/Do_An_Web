@@ -1,0 +1,107 @@
+/*banner*/
+.slider{
+    width: 84.3%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+.slider img{
+    width: 100%
+}
+/*Gioi Thieu*/
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+.main .video-1 {
+    flex: 1 1 300px;
+    margin-bottom: 10px;
+}
+
+.main .video-1 video {
+    width: 100%;
+}
+
+.main .images-1 {
+    flex: 1 1 300px;
+    margin-bottom: 18px;
+}
+.main .images-1 img {
+    width: 100%;
+}
+
+.main .text-content {
+    flex: 1 1 300px;
+}
+
+.main .text-content h2 {
+    font-size: 30px;
+    color: rgb(2, 90, 161);
+    margin-left: 20px;
+}
+
+.main .text-content p {
+    font-size: 20px;
+    color: rgb(95, 95, 95);
+    margin-left: 20px;
+}
+/*dichvu*/
+.dichvu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.dichvu h1 {
+    font-size: 30px;
+    color: rgb(85, 27, 27);
+}
+/*box-dv*/
+.dichvu-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 300px;
+    margin-right: 100px;
+}
+
+.dichvu-1 .images-dv {
+    flex: 1 1;
+    margin-bottom: 10px;
+}
+
+.dichvu-1 .images-dv img {
+    width: 15%;
+}
+
+.dichvu-1 .images-dv .text-dv {
+    flex: 1 1 500px;
+    transform: translateY(-95%);
+}
+
+.dichvu-1 .images-dv .text-dv h2 {
+    font-size: 20px;
+    color: rgb(13, 14, 15);
+    padding-left: 100px;
+}
+
+.dichvu-1 .images-dv .text-dv p {
+    font-size: 20px;
+    color: rgb(95, 95, 95);
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+

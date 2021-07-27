@@ -1,0 +1,120 @@
+﻿@model Web_CuoiKy.Models.San_Pham
+@{
+    ViewBag.Title = "ChiTietSP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<style>
+    .product img:hover{
+        width:250px;
+    }
+  .product{
+      border:1px solid;
+      padding:20px;
+      border-radius: 18px;
+  }
+</style>
+
+<div id="page-content" class="single-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li><a href="@Url.Action("Index","Home")">Trang Chủ</a></li>
+                    <li>@Model.Loai_SP.TENLOAI</li>
+                    <li>@Model.TENSP</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="main-content" class="col-md-8">
+                <div class="product">
+                    <div class="col-md-6">
+                        <div class="image">
+                            <img src="~/Images/@Model.HINH" style="height:300px" />
+                            <div class="image-more">
+                                <ul class="row">
+                                    <li class="col-lg-3 col-sm-3 col-xs-4">
+                                        <a href="#"> <img src="~/Images/@Model.HINH1" /></a>
+                                    </li>
+                                    <li class="col-lg-3 col-sm-3 col-xs-4">
+                                        <a href="#"> <img src="~/Images/@Model.HINH2" /></a>
+                                    </li>
+                                    <li class="col-lg-3 col-sm-3 col-xs-4">
+                                        <a href="#"> <img src="~/Images/@Model.HINH3" /></a>
+                                    </li>
+                                    <li class="col-lg-3 col-sm-3 col-xs-4">
+                                        <a href="#"> <img src="~/Images/@Model.HINH4" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="caption">
+                            <div class="name"><h3 style="font-weight:bold;">@Model.TENSP</h3></div>
+                            <div class="info">
+                                <ul>
+                                    <li>Mô tả sản phẩm: @Model.MOTA</li>
+                                    <li>ID: @Model.MASP</li>
+                                </ul>
+                            </div>
+                            <hr />
+                            <div class="price" style="text-align:center;">@Model.GIA VND</div>
+                           @* <div class="options">
+                                Mời Bạn Chọn Size
+                                <select>
+                                    <option value="" selected>----Please Select----</option>
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>*@
+                            <div class="form-row  mt-4">
+                                <div class="form-group col-md flex-grow-0">
+                                   
+                                </div> <!-- col.// -->
+                                <div class="form-group col-md">
+                                    <a href="@Url.Action("AddtoCart","ShoppingCart",new { id=@Model.MASP})" id="addtocart" class="btn  btn-primary">
+                                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                                        <span class="text" >Thêm vào giỏ hàng</span>
+                                    </a>
+                                </div> <!-- col.// -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="product-desc">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#description">Description</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="description" class="tab-pane fade in active">
+                            <h4>@Model.TENSP</h4>
+                            <p>@Model.MOTA</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sidebar" class="col-md-4">
+                <div class="widget wid-categories">
+                    <div class="heading" style="text-align:center;"><h4>Loại Sản PHẩm</h4></div>
+                    <div class="content" style="text-align:center;">
+                        <ul>
+                            <li> @Html.ActionLink("ÁO KHOÁC", "Ao_Khoac", "SanPham")</li>
+                            <li> @Html.ActionLink("ÁO SƠ MI", "Ao_SoMi", "SanPham")</li>
+                            <li> @Html.ActionLink("QUẦN JEANS", "Quan_Jeans", "SanPham")</li>
+                            <li> @Html.ActionLink("QUẦN TẤY", "Quan_Tay", "SanPham")</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	

@@ -1,0 +1,53 @@
+﻿@model PagedList.IPagedList<Web_CuoiKy.Models.San_Pham>
+@using PagedList.Mvc;
+@using PagedList;
+@{
+    ViewBag.Title = "Quan_Tay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="page-content" class="single-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="category.html">Sản Phẩm</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div id="main-content" class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="products">
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-lg-4 col-md-4 col-xs-12">
+                                    <div class="product">
+
+                                        <div class="image"><a href="@Url.Action("ChiTietSP",new { id=item.MASP })"> <img src="~/Images/@item.HINH" /></a></div>
+                                        <div class="buttons">
+                                            <a class="btn cart" href="#">Thêm <span class="glyphicon glyphicon-shopping-cart"></span></a>
+                                        </div>
+                                        <div class="caption">
+                                            <div class="name"><h3><a href="@Url.Action("ChiTietSP",new { id= @item.MASP })">@item.TENSP</a></h3></div>
+                                            <div class="price">@item.GIA VND</div>
+                                            <div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <ul class="pagination">
+                        @Html.PagedListPager(Model, pageNo => Url.Action("Quan_Tay", new { pageNo }))
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	

@@ -1,0 +1,119 @@
+﻿@model Web_CuoiKy.Models.Cart
+
+@{
+    ViewBag.Title = "ShowToCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    th, td {
+        padding: 5px;
+    }
+
+    th {
+        text-align: center;
+    }
+</style>*@
+<div id="page-content" class="single-page">
+    <div class="container">
+        <div class="row">
+            <h2 style="text-align:center;margin-bottom:60px;">Giỏ Hàng</h2>
+            @if (Model != null)
+            {
+                <table class="table" style="border: 2px solid; border-radius: 20px; padding: 30px;">
+                    <thead>
+                        <tr>
+                            <th>Tên Sản Phẩm</th>
+                            <th>Hình Ảnh</th>
+                            <th>Giá Sản Phẩm</th>
+                            <th>Số Lượng</th>
+                            <th>Thành Tiền</th>
+                            <th>Xóa sản phẩm</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Items)
+                        {
+                            double total = Convert.ToDouble(item._shopping_sanpham.GIA.Value * item._shopping_quantity);
+                            <tr>
+                                <td>
+                                    <a href="@Url.Action("ChiTietSP","SanPham",new {id=@item._shopping_sanpham.MASP })">@item._shopping_sanpham.TENSP</a>
+                                </td>
+                                <td>
+                                    <img src="~/Images/@item._shopping_sanpham.HINH" style="height: 200px; border: 1px solid; border-radius: 10px;" />
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => item._shopping_sanpham.GIA) VND
+                                </td>
+                                <td>
+                                    @using (Html.BeginForm("UpdateCart", "ShoppingCart"))
+                                    {
+                                        <input type="hidden" value="@item._shopping_sanpham.MASP" name="ID_SanPham" />
+                                        <input type="number" value="@item._shopping_quantity" name="Quantity" max="50" min="0" style="border:1px solid;border-radius:5px;text-align:center;" />
+                                        <input type="submit" value="Cập nhật" class="btn btn-primary" />
+                                    }
+
+                                </td>
+                                <td>
+                                    Thành Tiền: @total VND
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("RemoveCart","ShoppingCart",new { id=item._shopping_sanpham.MASP})" class="btn btn-primary">Xóa</a>
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6" style="text-align:center;"> <span style="font-weight:600">Tổng Tiền: @Model.Total_Money() VND</span> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td colspan="4" style="text-align:center;">
+                                @using (Html.BeginForm("CheckOut", "ShoppingCart"))
+                                {
+                                <table style="border-collapse:separate;border-spacing:5px;">
+                                    <tr>
+                                        <td>Mã Thẻ Căn Cước Công Dân:</td>
+                                        <td>
+                                            <input type="number" name="CodeCustomer" />
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Adress:</td>
+                                        <td>
+                                            <input type="text" name="Address_Delivery" />
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td>
+                                           
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("Create","Customer")" class="btn btn-success">Đăng kí user</a>
+                                            <input type="submit" value="Đặt hàng" class="btn btn-success" />
+
+                                        </td>
+                                    </tr>
+                                    
+                                </table>
+                                }
+                            </td>
+                        </tr>
+
+                    </tfoot>
+                </table>
+            }
+            <a href="@Url.Action("SanPham","SanPham")" class="btn btn-danger"><<< Tiếp tục mua sắm</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+﻿@using Web_CuoiKy.Models
+@model LoginViewModel
+@{
+    Layout = null;
+    ViewBag.Title = "Log in";
+}
+<title> @ViewBag.Title</title>
+<link href="~/Content/all.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+<link href="~/Content/sb-admin-2.min.css" rel="stylesheet" />
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6">
+
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Đăng Nhập</h1>
+                                    </div>
+                                    <section id="loginForm">
+                                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <hr />
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            <form class="user">
+                                                <div class="form-group row">
+                                                    @Html.LabelFor(m => m.Email, new { @class = "col-md-4 control-label" })
+                                                    <div class="col-md-8">
+                                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    @Html.Label("Mật Khẩu", new { @class = "col-md-4 control-label" })
+                                                    <div class="col-md-8">
+                                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-offset-2 col-md-10">
+                                                        <div class="checkbox">
+                                                            @Html.CheckBoxFor(m => m.RememberMe)
+                                                            @Html.Label("Nhớ tài khoản?")
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-offset-2 col-md-12">
+                                                        <input type="submit" value="Đăng Nhập" class="btn btn-primary btn-user btn-block" />
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                              
+                                            </form>
+                                            @Html.Partial("_ExternalLoginsListPartial", new Web_CuoiKy.Models.ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                                            <hr>
+                                            <div class="text-center">
+                                                @Html.ActionLink("Quên Mật Khẩu?", "ForgotPassword")
+                                            </div>
+                                            <div class="text-center">
+                                                @Html.ActionLink("Tạo Tài Khoản Mới ", "Register")
+                                            </div>
+                                        }
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

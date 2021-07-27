@@ -1,0 +1,143 @@
+
+/*ban do*/
+.lienhe{
+    display:  flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 190px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+}
+.lienhe .map-lhe{
+    flex: 1 1;
+}
+.lienhe .context-lhe{
+    flex: 1 1 500px;
+}
+.lienhe .context-lhe h2{
+    font-size: 25px;
+    color: rgb(43, 43, 43);
+    padding-left: 40px;
+    padding-top: 12px;
+}
+.lienhe .context-lhe p{
+    font-size: 18px;
+    color: rgb(97, 93, 93);
+    padding-left: 40px;
+    padding-top: 15px;
+}
+.lienhe-1 input{
+    width: 88%;
+    height: 35px;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 0.5px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    margin-top: 15px;
+    margin-left: 40px;
+}
+.lienhe-2 input{
+    width: 37.8%;
+    height: 35px;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 0.5px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    margin-top: 15px;
+    margin-left: 40px;
+}
+input:focus {
+    background-color: rgb(205, 249, 255);
+}
+.lienhe-3 textarea{
+    width: 88%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 0.5px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    margin-top: 15px;
+    margin-left: 40px;
+}
+textarea:focus {
+    background-color: rgb(205, 249, 255);
+}
+.button {
+    border: none;
+    color: rgb(255, 250, 250);
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 40px;
+    background-color: rgb(7, 7, 7);
+}
+.button:focus{
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 40px;
+    background-color: rgb(205, 249, 255);
+}
+.lienhe-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 190px;
+    margin-right: 100px;
+}
+.lienhe-c .context-lhe {
+    flex: 1 1;
+}
+.lienhe-c .context-lhe b {
+    color: rgb(97, 93, 93);
+
+}
+.lienhe-c .context-lhe h2 {
+    color: rgb(97, 93, 93);
+    margin-bottom: 5px;
+}
+.lienhe-c .context-lhe p {
+    color: rgb(97, 93, 93);
+}
+.lienhe-c .showroom {
+    flex: 1 1;
+}
+.lienhe-c .showroom b {
+    color: rgb(97, 93, 93);
+    padding-left: 13px;
+    margin-bottom: 15px;
+}
+.lienhe-c .showroom p {
+    color: rgb(97, 93, 93);
+    padding-left: 13px;
+    margin-top: 20px;
+    margin-bottom:15px;
+}
+.lienhe-c .page b {
+    color: rgb(97, 93, 93);
+    margin-bottom: 15px;
+}
+
+
